@@ -1,0 +1,32 @@
+<!--
+  Generated template for the EditsongPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{view_song_title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+      <ion-item>
+        <ion-label stacked>Song Title</ion-label>
+        <ion-input type="text" #songtitle value="{{view_song_title}}"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label stacked>Singer</ion-label>
+          <ion-input type="text" #songsinger value="{{view_song_singer}}"></ion-input>
+        </ion-item>
+      <ion-item>
+          <ion-label stacked>Song Lyrics</ion-label>
+          <ion-textarea #songlyrics value="{{view_song_lyrics}}"></ion-textarea>
+        </ion-item>
+    </ion-list>
+  
+    <div padding>
+        <button ion-button color="primary" (click)="updateSong();">Update Song</button>
+    </div>
+</ion-content>

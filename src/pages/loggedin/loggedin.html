@@ -1,0 +1,51 @@
+<!--
+  Generated template for the LoggedinPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <ion-buttons start>
+        <button ion-button (click)="userinfo()">
+          <ion-icon name="contact"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>
+        To Do List
+      </ion-title>
+      <ion-buttons end>
+        <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-menu type="overlay" [content]="mycontent">
+        <ion-content>
+            <ion-list>
+              <ion-item menuClose detail-none>Close Menu</ion-item>
+            </ion-list>
+        </ion-content>
+      </ion-menu>
+        
+        <ion-nav #mycontent [root]="rootPage"></ion-nav>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let itemTodo of arrTodo; let i = index" (click)="edititempage(itemTodo)">
+      {{itemTodo.todoitem}}
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label stacked>Enter Item</ion-label>
+      <ion-input type="text" #item></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+      <button ion-button color="primary" (click)="saveTodoItem();">Save Item</button>
+  </div>
+</ion-content>
